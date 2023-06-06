@@ -68,7 +68,7 @@ export class DataService {
         this.obtenerOrdenes()
             .subscribe(
                 (ordenesGet: any[] = []) => { this.ordenes = ordenesGet;
-                    this.ordenes.push(ordenes)
+                    this.ordenes.push(...ordenes)
                     this.guardarOrden(ordenesGet)    
                 }
             );
@@ -82,6 +82,8 @@ export class DataService {
                 error => console.error("error guardar personas: " + error)            
             );
     }
+
+    
   
 
 }

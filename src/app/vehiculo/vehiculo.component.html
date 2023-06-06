@@ -1,9 +1,8 @@
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-  <h1 class="display-4 fw-normal">Crear Vehiculo</h1>
-  <form class="row" #f="ngForm" (ngSubmit)="f.form.valid && guardarVehiculos()">
-    <div class="col">
-
-      <label for="exampleInputPassword1" class="text-start">Placa</label>
+  <h1>Crear Vehiculo</h1>
+  <div class="bg-body-tertiary p-3 rounded">
+    <form class="row" #f="ngForm" (ngSubmit)="f.form.valid && guardarVehiculos()">
+      <label for="exampleInputPassword1" class="form-label">Placa</label>
       <input class="form-control"
         type="text" name="placa" id="placa" placeholder="placa"
         [(ngModel)]="placa" required
@@ -11,23 +10,24 @@
 
       <label for="exampleInputPassword1" class="form-label">Cliente</label>
       <select class="form-select" aria-label="Default select example" id="cliente">
-        <option value="{{clienteItem.cedula}}" *ngFor="let clienteItem of clientes; let indice = index">{{ clienteItem.cedula }}</option>
-      </select>
-    </div>
-  <div class="col">
-    <label for="exampleInputPassword1" class="form-label">Modelo Vehiculo</label>
-    <input class="form-control"
-        type="number" name="modelo" id="modelo" placeholder="modelo"
-        [(ngModel)]="modelo" required
-      />
+        <option value="{{clienteItem.cedula}}" *ngFor="let clienteItem of clientes; let indice = index">{{ clienteItem.cedula }} - {{ clienteItem.nombres }}</option>
+      </select><br>
 
-    Tipo vehiculo
-    <select class="form-select" aria-label="Default select example" id="tipo">
-      <option value="Sedan">Sedan</option>
-      <option value="Campero">Campero</option>
-    </select>
+      <label for="exampleInputPassword1" class="form-label">Modelo Vehiculo</label>
+      <input class="form-control"
+          type="number" name="modelo" id="modelo" placeholder="modelo"
+          [(ngModel)]="modelo" required
+        /><br>
+
+      <label for="exampleInputPassword1" class="form-label">Tipo vehiculo</label>
+      <select class="form-select" aria-label="Default select example" id="tipo">
+        <option value="Sedan">Sedan</option>
+        <option value="Campero">Campero</option>
+      </select>
+      
+      <button class="btn btn-outline-secondary" type="submit" style="">Crear vehiculo</button>
+    </form>
+    
   </div>
-    <button class="btn btn-outline-secondary" type="submit" style="cursor: pointer">Agregar</button>
-  </form>
 </div>
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>

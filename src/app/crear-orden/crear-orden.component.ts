@@ -12,7 +12,6 @@ import { OrdenService } from '../service/orden.servicio';
 export class CrearOrdenComponent implements OnInit{
 
   servicios: any;
-  //clientes: Cliente[] = [];
   vehiculos: Vehiculo[] = [];
   vehiculo: string = "";
   orden: any[] = []
@@ -42,12 +41,5 @@ export class CrearOrdenComponent implements OnInit{
     this.orden.push(this.ordenTemporal)
     this.ordenServicio.guardarOrden(this.orden)
   }
-
-
-
-  // crearOrden(){
-  //   this.ordenServicio.guardarOrden(this.orden);
-  // }
-
 
 }
